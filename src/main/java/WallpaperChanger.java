@@ -1,5 +1,3 @@
-package com;
-
 import com.sun.jna.Library;
 import com.sun.jna.Native;
 import com.sun.jna.win32.W32APIOptions;
@@ -21,12 +19,6 @@ import java.nio.file.Paths;
 
 
 public class WallpaperChanger {
-    public static interface User32 extends Library {
-        User32 INSTANCE = (User32) Native.loadLibrary("user32", User32.class, W32APIOptions.DEFAULT_OPTIONS);
-
-        void SystemParametersInfo(int one, int two, String s, int three);
-    }
-
     private static void downloadFileFromURL(String urlString, File destination) {
         try {
             URL website = new URL(urlString);
